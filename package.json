@@ -57,5 +57,11 @@
     "postcss-loader": "^4.0.4",
     "sass-loader": "^10.0.4",
     "webpack": "^5.3.2"
+  },
+  "engines": {
+    "node": ">= 10"
+  },
+  "vercel": {
+    "dotenv": "config.env"
   }
 }

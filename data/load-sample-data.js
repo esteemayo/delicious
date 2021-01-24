@@ -4,9 +4,17 @@ const mongoose = require('mongoose');
 
 dotenv.config({ path: './variables.env' });
 
-const db = process.env.DATABASE_LOCAL;
+// Connect to our Database and handle a bad connections
+const dbLocal = process.env.DATABASE_LOCAL;
+
+// MongoDB Atlas
+const db = process.env.DATABASE.replace(
+  '<PASSWORD>',
+  process.env.DATABASE_PASSWORD
+);
 
 mongoose.connect(db, {
+// mongoose.connect(dbLocal, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
